@@ -24,7 +24,7 @@ describe('Collision', function() {
       surfer.right = 25;
       rock.x = 24;
 
-      assert.equal(true, collision.frontsTouching(rock));
+      assert.equal(true, collision.frontColliding(rock));
     });
 
     it('returns false if surfers front is not yet touching rocks front', function(){
@@ -32,7 +32,7 @@ describe('Collision', function() {
       let rock = new Rock({ x: 25, right: 50, top: 165 });
       let collision = new Collision(surfer);
 
-      assert.equal(false, collision.frontsTouching(rock));
+      assert.equal(false, collision.frontColliding(rock));
     });
 
     it('returns true if surfers back collides with rocks back', function(){
@@ -40,7 +40,7 @@ describe('Collision', function() {
       let rock = new Rock({ x: 25, right: 50, top: 165 });
       let collision = new Collision(surfer);
 
-      assert.equal(true, collision.backsTouching(rock));
+      assert.equal(true, collision.backColliding(rock));
     });
 
     it('returns false if surfers back is past rocks back', function(){
@@ -51,7 +51,7 @@ describe('Collision', function() {
       rock.right = 25;
       surfer.x = 26;
 
-      assert.equal(false, collision.backsTouching(rock));
+      assert.equal(false, collision.backColliding(rock));
     });
 
     it('returns true if surfers bottom collides with rocks top', function(){
@@ -62,7 +62,7 @@ describe('Collision', function() {
       surfer.bottom = 190;
       rock.top = 165;
 
-      assert.equal(true, collision.surferBottomTouchingObstacleTop(rock));
+      assert.equal(true, collision.surferBottomCollidingWithObstacleTop(rock));
     });
 
     it('returns false if surfers bottom is above rocks top', function(){
@@ -73,7 +73,7 @@ describe('Collision', function() {
       surfer.bottom = 100;
       rock.top = 150;
 
-      assert.equal(false, collision.surferBottomTouchingObstacleTop(rock));
+      assert.equal(false, collision.surferBottomCollidingWithObstacleTop(rock));
     });
 
     it('registers collision if the surfer collides with an obstacle', function(){
