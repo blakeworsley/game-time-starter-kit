@@ -10,7 +10,7 @@ The goal of this project was to use all the skills we've learned so far to build
 
 We used the Google Chrome dinosaur game as inspiration to create Surf's Up. Players manipulate a surfer using the spacebar to jump over rocks.
 
-[Link to screenshot]()
+[Link to screenshot](https://github.com/blakeworsley/surfs-up/blob/gh-pages/img/Surfs-up-screenshot.png)
 
 ## Installation
 Clone repository and install dependencies:  
